@@ -33,7 +33,7 @@ async def search_update(force=False, check=False) -> bool:
 		if not check and if_notification and not force:
 			return False
 		
-		response = requests.get("https://raw.githubusercontent.com/Ijidishurka/bfg/refs/heads/main/bot.py")
+		response = requests.get("https://raw.github.com/Maksim534/FGMBOTIK/blob/main/bot.py")
 		response.raise_for_status()
 		
 		content = response.text
@@ -54,7 +54,7 @@ async def search_update(force=False, check=False) -> bool:
 		
 		if_notification = True
 		
-		response = requests.get("https://raw.githubusercontent.com/Ijidishurka/bfg/refs/heads/main/update_list.txt")
+		response = requests.get("https://raw.githubusercontent.com/Maksim534/FGMBOTIK/refs/heads/main/update_list.txt")
 		
 		txt = f'<b>🔍 Доступно обновление 🛎</b>\nЧто нового?\n\n<i>{response.text}</i>'
 		
@@ -80,7 +80,7 @@ async def update_bot(message: types.Message):
 		txt = '⚠️ У вас уже установлена последняя версия бота.\n<i>Нажмите на кнопку ниже, если вы хотите</i> <a href="https://github.com/Ijidishurka/bfg">обновить файлы бота</a>'
 		forse = True
 	else:
-		response = requests.get("https://raw.githubusercontent.com/Ijidishurka/bfg/refs/heads/main/update_list.txt")
+		response = requests.get("https://raw.githubusercontent.com/Maksim534/FGMBOTIK/refs/heads/main/update_list.txt")
 		txt = f'<b>🔍 Доступно обновление 🛎</b>\nЧто нового?\n\n<i>{response.text}</i>'
 
 	await message.answer(txt, reply_markup=kb.update_bot(forse=forse), disable_web_page_preview=True)
@@ -105,7 +105,7 @@ async def bot_update(call: types.CallbackQuery) -> None:
 	await call.message.edit_text('<i>🎩 Установка обновления...</i>')
 	
 	with tempfile.TemporaryDirectory() as temp_dir:
-		subprocess.run(['git', 'clone', 'https://github.com/Ijidishurka/bfg.git', temp_dir], check=True)
+		subprocess.run(['git', 'clone', 'https://github.com/Maks534/bfg.git', temp_dir], check=True)
 
 		for item in os.listdir(temp_dir):
 			if item in ['config_ex.py', 'modules']:
