@@ -524,7 +524,7 @@ async def youtube(message: types.Message, user: BFGuser):
         await message.answer(f'{user.url}, у вас нет телефона чтобы пользоваться {lose}')
         return    
 
-    await('вы успешно посмотрели видеоролик, и получили ...')
+    await message.answer('вы успешно посмотрели видеоролик, и получили ...')
 
 def reg(dp: Dispatcher):
     dp.register_message_handler(helicopters_list, lambda message: message.text.lower().startswith(('вертолеты', 'вертолёты')))
