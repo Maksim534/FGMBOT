@@ -516,9 +516,19 @@ async def sell_plane(message: types.Message, user: BFGuser):
     await message.answer(f'{user.url}, вы успешно продали самолёт за {tr(summ)}$ 🎉')
     await db.sell_property(user.user_id, 'plane', summ)
 
+@antispam
+async def youtybe(message: Message.types):
+    win, lose = BFGconst.emj()
+
+    if int(user.property.phone) == 0:
+        await message.answer(f'{user.url}, у вас нет телефона чтобы пользоваться {lose}')
+        return    
+
+    await('вы успешно посмотрели видеоролик, и получили ...')
 
 def reg(dp: Dispatcher):
     dp.register_message_handler(helicopters_list, lambda message: message.text.lower().startswith(('вертолеты', 'вертолёты')))
+    dp.register_message_handler(youtube, lambda message: message.text.lower().startswith(('ютуб')))
     dp.register_message_handler(cars_list, lambda message: message.text.lower().startswith('машины'))
     dp.register_message_handler(yahta_list, lambda message: message.text.lower().startswith('дома'))
     dp.register_message_handler(phone_list, lambda message: message.text.lower().startswith('телефоны'))
