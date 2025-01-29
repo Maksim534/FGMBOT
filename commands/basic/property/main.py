@@ -516,15 +516,7 @@ async def sell_plane(message: types.Message, user: BFGuser):
     await message.answer(f'{user.url}, вы успешно продали самолёт за {tr(summ)}$ 🎉')
     await db.sell_property(user.user_id, 'plane', summ)
 
-@antispam
-async def youtube(message: types.Message, user: BFGuser):
-    win, lose = BFGconst.emj()
 
-    if int(user.property.phone) == 0:
-        await message.answer(f'{user.url}, у вас нет телефона чтобы пользоваться {lose}')
-        return    
-
-    await message.answer('вы успешно посмотрели видеоролик, и получили ...')
 
 def reg(dp: Dispatcher):
     dp.register_message_handler(helicopters_list, lambda message: message.text.lower().startswith(('вертолеты', 'вертолёты')))
