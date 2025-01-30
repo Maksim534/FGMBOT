@@ -12,10 +12,10 @@ async def youtube(message: types.Message, user: BFGuser):
       await message.answer('у вас нет телефона чтобы снимать видеоролики')
       return
 
-  rand = random.randint(1, 2)
+  summ = random.randint(1, 2)
 
-  await db.getbcoins(user.user_id, rand)
-  await message.answer(f'Вы успешно сняли видеоролик, вы получили {rand}, b-coins')
+  await db.getbcoins(user.user_id, summ)
+  await message.answer(f'Вы успешно сняли видеоролик, вы получили {summ}, b-coins')
 
   
   
