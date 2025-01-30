@@ -22,4 +22,4 @@ async def youtube(message: types.Message, user: BFGuser):
   
 
 def reg(dp: Dispatcher):
-  dp.register_message_handler(youtube, lambda message: message.text == 'ютуб')
+  dp.register_message_handler(youtube, lambda message: message.text == 'ютубббббб')
