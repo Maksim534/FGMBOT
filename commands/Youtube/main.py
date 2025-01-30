@@ -13,10 +13,10 @@ async def youtube(message: types.Message, user: BFGuser):
       return
 
   summ = random.randint(1, 2)
-  photo = ('https://avatars.mds.yandex.net/i?id=a2e825c761e95d922d0df365745526c3014944c0-4902600-images-thumbs&n=13')
+
   
   await db.getbcoins(user.user_id, summ)
-  await bot.send_photo(chat_id=message.id, f'{photo}Вы успешно сняли видеоролик, вы получили {summ}, b-coins')
+  await message.answer( f'Вы успешно сняли видеоролик, вы получили {summ}, b-coins')
 
   
   
