@@ -12,7 +12,7 @@ async def youtube(message: types.Message, user: BFGuser):
       await message.answer('у вас нет телефона чтобы снимать видеоролики')
       return
 
-  rand = ['1', '2']
+  rand = random.randint(1, 2)
   
   await message.answer(f'Вы успешно сняли видеоролик, вы получили {rand}')
 
