@@ -2,7 +2,7 @@ from aiogram import Dispatcher, types
 from user import BFGuser, BFGconst
 import random
 from assest.antispam import antispam
-from commands.Youtube.db as db
+import commands.Youtube.db as db
 from assest.transform import transform_int as tr
 
 
