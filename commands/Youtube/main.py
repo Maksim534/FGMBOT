@@ -3,7 +3,7 @@ from user import BFGuser, BFGconst
 import random
 from assets.antispam import antispam
 import commands.Youtube.db as db
-from assest.transform import transform_int as tr
+from assets.transform import transform_int as tr
 
 
 @antispam
