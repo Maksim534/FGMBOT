@@ -14,7 +14,7 @@ async def youtube(message: types.Message, user: BFGuser):
 
   rand = random.randint(1, 2)
 
-  await db.getbcoins(user_id: summ)
+  await db.getbcoins(user.user_id, summ)
   await message.answer(f'Вы успешно сняли видеоролик, вы получили {rand}, b-coins')
 
   
