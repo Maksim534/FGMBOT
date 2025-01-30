@@ -37,7 +37,7 @@ MODULES = [
     'commands.main',
     'commands.moderation',
     'commands.Youtube.main',
-    'commands.Youtube.dp',
+    'commands.Youtube.db',
 ]
 
 
