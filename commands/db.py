@@ -186,6 +186,14 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS property (
     house INTEGER DEFAULT '0',
     plane INTEGER DEFAULT '0'
 )''')
+conn.commit()
+
+cursor.execute('''CREATE TABLE IF NOT EXISTS youtube (
+    user_id INTEGER,
+    youtubekanal INTEGER DEFAULT '0',
+    youtbalanc INTEGER DEFAULT '0',
+    youtubvideo INTEGER DEFAULT '0'
+)''')
 
 
 current_kurs = cursor.execute('SELECT kursbtc FROM sett').fetchone()
