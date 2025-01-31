@@ -24,7 +24,7 @@ async def youtube(message: types.Message, user: BFGuser):
 
 
 @antispam
-async def youtubekanal(message:types.Message, user: BFGuser):
+async def youtubekanal(message: types.Message, user: BFGuser):
   if int(user.youtubkanal) == 0:
       await db.createkanal(user.user_id)
       await message.answer(f'{user.url}, Вы успешно создали ютуб канал ')
