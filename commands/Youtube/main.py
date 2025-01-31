@@ -23,19 +23,9 @@ async def youtube(message: types.Message, user: BFGuser):
   await message.answer( f'Вы успешно сняли видеоролик, вы получили {summ}, b-coins')
 
 
-@antispam
-async def youtubekanal(message: types.Message, user: BFGuser):
-  if int(user.youtubkanal) == 0:
-      await db.createkanal(user.user_id, summ)
-      await message.answer(f'{user.url}, Вы успешно создали ютуб канал ')
-      return
-
-  else:
-      await message.answer(f'{user.url}, Вы не можете создать ютуб канал, он у вас уже есть.')
 
   
   
 
 def reg(dp: Dispatcher):
-  dp.register_message_handler(youtube, lambda message: message.text == 'ютубббббб')
-  dp.register_message_handler(youtubekanal, lambda message: message.text == 'Создать канал', 'создать канал')
+  dp.register_message_handler(youtube, lambda message: message.text == 'ютуб')
