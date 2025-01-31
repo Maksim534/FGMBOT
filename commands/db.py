@@ -33,7 +33,10 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS users (
     issued NUMERIC DEFAULT '0',
     game_id INTEGER,
     yen TEXT DEFAULT '0',
-    perlimit TEXT DEFAULT '0'
+    perlimit TEXT DEFAULT '0',
+    youtubekanal INTEGER DEFAULT '0',
+    youtbalanc INTEGER DEFAULT '0',
+    youtubvideo INTEGER DEFAULT '0'
 )''')
 
 
@@ -187,13 +190,6 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS property (
     plane INTEGER DEFAULT '0'
 )''')
 conn.commit()
-
-cursor.execute('''CREATE TABLE IF NOT EXISTS youtube (
-    user_id INTEGER,
-    youtubekanal INTEGER DEFAULT '0',
-    youtbalanc INTEGER DEFAULT '0',
-    youtubvideo INTEGER DEFAULT '0'
-)''')
 
 
 current_kurs = cursor.execute('SELECT kursbtc FROM sett').fetchone()
