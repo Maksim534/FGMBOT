@@ -10,5 +10,5 @@ async def getbcoins(user_id: int, summ):
     conn.commit()
 
 async def createkanal(user_id):
-    createkanal = cursor.execute(f"UPDATE users SET youtubekanal = 1 WHERE user_id = ?", (user_id))
+    cursor.execute(f"UPDATE users SET youtubekanal = 1 WHERE user_id = ?", (user_id,))
     conn.commit()
