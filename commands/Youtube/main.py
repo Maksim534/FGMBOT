@@ -12,7 +12,7 @@ async def youtube(message: types.Message, user: BFGuser):
       await message.answer('у вас нет телефона чтобы снимать видеоролики')
       return
 
-  if int(user.youtubkanal) == 0:
+  if int(user.users.youtubekanal) == 0:
       await message.answer('У вас нет ютуб канала чтобы начать снимать видеоролики')
       return
     
@@ -26,10 +26,10 @@ async def youtube(message: types.Message, user: BFGuser):
 @antispam
 async def youtubekanal(message:types.Message, user: BFGuser):
   if int(user.youtubkanal) == 0:
+      await db.createkanal(user.user_id, num)
       await message.answer(f'{user.url}, Вы успешно создали ютуб канал ')
       return
-
-  if int(user.youtubkanal) == 1:
+  else:
       await message.answer(f'{user.url}, Вы не можете создать ютуб канал, он у вас уже есть.')
 
   
