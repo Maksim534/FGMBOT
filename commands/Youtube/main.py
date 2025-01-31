@@ -37,4 +37,4 @@ async def youtubekanal(message:types.Message, user: BFGuser):
 
 def reg(dp: Dispatcher):
   dp.register_message_handler(youtube, lambda message: message.text == 'ютубббббб')
-  dp.register_message_handler(youtubekanal. lambda message: message.text == 'Создать канал', 'создать канал')
+  dp.register_message_handler(youtubekanal, lambda message: message.text == 'Создать канал', 'создать канал')
