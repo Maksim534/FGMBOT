@@ -12,7 +12,7 @@ async def youtube(message: types.Message, user: BFGuser):
       await message.answer('у вас нет телефона чтобы снимать видеоролики')
       return
 
-  if int(user.users.youtubekanal) == 0:
+  if int(user.youtubekanal) == 0:
       await message.answer('У вас нет ютуб канала чтобы начать снимать видеоролики')
       return
     
