@@ -36,6 +36,8 @@ MODULES = [
     'commands.basic.rpmod',
     'commands.main',
     'commands.moderation',
+    'commands.Youtube.main',
+    'commands.Youtube.dp',
 ]
 
 
