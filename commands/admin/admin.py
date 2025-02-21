@@ -84,6 +84,11 @@ async def ads_menu(message: types.Message):
 
 
 @admin_only(private=True)
+async def resetlimit(message: types.Message):
+    cursor.execute('SE
+    await message.answer('Обнулён')
+
+@admin_only(private=True)
 async def rassilka(message: types.Message):
     await Mailing.mailing_text.set()
     await message.answer('📂 Пришлите мне готовое сообщение для рассылки:', reply_markup=kb.cancel())
