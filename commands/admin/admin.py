@@ -85,7 +85,7 @@ async def ads_menu(message: types.Message):
 
 @admin_only(private=True)
 async def resetlimit(message: types.Message):
-    cursor.execute('SE
+    cursor.execute(f'UPDATE users SET limit = ? WHERE user_id = ?', (0, user_id))
     await message.answer('Обнулён')
 
 @admin_only(private=True)
