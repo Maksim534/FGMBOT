@@ -85,7 +85,7 @@ async def ads_menu(message: types.Message):
 
 @admin_only(private=True)
 async def resetlimit(message: types.Message):
-    cursor.execute(f'UPDATE users SET limit = ? WHERE user_id = ?', (0, user_id))
+    cursor.execute(f'UPDATE users SET per = ? WHERE user_id = ?', (0, user_id))
     await message.answer('Обнулён')
 
 @admin_only(private=True)
@@ -156,7 +156,9 @@ async def process_rassilka2(message: types.Message, state: FSMContext):
 
 def reg(dp: Dispatcher):
     dp.register_message_handler(admin_menu, commands='adm')
+    dp.register_message_handler(resetlimit, commands='resetlimit')
     dp.register_message_handler(admin_menu, lambda message: message.text == '🔙 Назад')
+    
     
     dp.register_message_handler(unloading, lambda message: message.text == '📥 Выгрузка')
     dp.register_message_handler(unloading_logs, lambda message: message.text == '📋 Логи')
