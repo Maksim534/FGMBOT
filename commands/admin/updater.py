@@ -33,7 +33,7 @@ async def search_update(force=False, check=False) -> bool:
 		if not check and if_notification and not force:
 			return False
 		
-		response = requests.get("https://raw.github.com/Maksim534/FGMBOTIK/blob/main/bot.py")
+		response = requests.get("https://raw.github.com/Maksim534/FGMBOTIK/refs/heads/main/bot.py")
 		response.raise_for_status()
 		
 		content = response.text
